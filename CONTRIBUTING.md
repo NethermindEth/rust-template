@@ -13,6 +13,7 @@ git config commit.gpgsign true
 * [Rust](https://www.rust-lang.org/tools/install)
 * [cargo deny](https://github.com/EmbarkStudios/cargo-deny)
 * [typos](https://github.com/crate-ci/typos?tab=readme-ov-file#install)
+* [cargo sort](https://github.com/DevinR528/cargo-sort)
 
 ## Code quality assurance
 

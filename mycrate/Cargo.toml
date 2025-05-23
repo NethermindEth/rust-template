@@ -12,7 +12,7 @@ license.workspace = true
 # Use `default-features = false` 
 # and explicitly list features to prevent code bloat and 
 # code break after upgrades 
-thiserror = {version = "1.0", default-features = false }
+thiserror = { version = "1.0", default-features = false }
 
 # TODO(template)
 # don't forget to put this at every crate
