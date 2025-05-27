@@ -5,7 +5,8 @@ TODO(template) describe the project
 ## TODO(template) - rust template usage (remove this section after setup)
 
 This is a rust template from ZKE team :rocket: (a focus on cryptographic libs in sync Rust).
-To use it - find `TODO(template)` over the repository and set appropriate values.
+
+:bike: To use it - find `TODO(template)` over the repository and set appropriate values.
 
 - [ ] Settings -> Collaborators and teams - add your team group as admins for the repo (e.g. [zk-engineering](https://github.com/orgs/NethermindEth/teams/zk-engineering))
 - [ ] Settings -> General -> Pull Requests - allow only `Allow squash merging`, also tick `Automatically delete head branches`
@@ -13,8 +14,9 @@ To use it - find `TODO(template)` over the repository and set appropriate values
 - [ ] Update the description of the repo at the repo's page, add tag topics
 - [ ] Introduce necessary sections at the repo's page (releases, deployments etc)
 - [ ] Add a website url (if applicable) or a docs page (see [docs](./.github/workflows/docs.yml) flow for public repos)
-- [ ] add [all contributors](https://allcontributors.org/docs/en/cli/installation)
-- [ ] import protection rulesets (see below) in the repo settings (Settings -> Rules -> Rulesets -> Import a ruleset)
+- [ ] Add [all contributors](https://allcontributors.org/docs/en/cli/installation)
+- [ ] Import protection rulesets (see below) in the repo settings (Settings -> Rules -> Rulesets -> Import a ruleset)
+- [ ] For binary crates with specific requirements to Rust features consider also [pinning](https://rust-lang.github.io/rustup/overrides.html#the-toolchain-file) the rust toolchain version
 
 Main branch protection
 
@@ -104,7 +106,8 @@ See [examples](./examples/).
 
 ## License
 
-TODO(template) - update [license](https://www.notion.so/nethermind/Open-Source-Software-Usage-and-Licensing-Policy-1c3360fc38d080fd9e61c29b35d1d5af) if needed
+TODO(template) - update [license](https://www.notion.so/nethermind/Open-Source-Software-Usage-and-Licensing-Policy-1c3360fc38d080fd9e61c29b35d1d5af) if needed.
+For commercial licenses it is required to get an approve from Legal.
 
 Apache 2.0
 
