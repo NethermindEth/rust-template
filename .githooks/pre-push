@@ -20,11 +20,10 @@ if ! cargo fmt --all -- --check; then
 fi
 
 # Typo check
-# TODO(template) enable if sensible
-# if ! typos; then
-#     echo "❌ Spelling mistakes found (run 'typos --write-changes')"
-#     exit 4
-# fi
+if ! typos; then
+    echo "❌ Spelling mistakes found (run 'typos --write-changes')"
+    exit 4
+fi
 
 # Linting
 if ! cargo clippy --all-targets --all-features -- -D warnings; then
