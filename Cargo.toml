@@ -4,6 +4,7 @@
 members = ["examples", "mycrate"]
 resolver = "2"
 default-members = ["mycrate"]
+
 [workspace.package]
 version = "0.1.0"
 edition = "2021"
