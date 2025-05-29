@@ -51,7 +51,8 @@ ignore = false
 registries = []
 
 [bans]
-wildcards = "allow"
+wildcards = "deny"
+allow-wildcard-paths = true
 multiple-versions = "warn"
 highlight = "all"
 
