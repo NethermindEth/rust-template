@@ -21,8 +21,20 @@ jobs:
     - name: Run code coverage
       run: cargo llvm-cov --workspace --lcov --output-path lcov.info --ignore-filename-regex '^examples/'
 
+    - name: Create generate_html_from_lcov.sh script
+      run: |
+        COMMIT_HASH=$(git rev-parse HEAD)
+        REPO_URL="git@github.com:${{ github.repository }}.git"
+        WORKING_DIR=$(pwd)
+        echo "#!/bin/sh" > generate_html_from_lcov.sh
+        echo "git clone $REPO_URL project && (cd project && git checkout $COMMIT_HASH)" >> generate_html_from_lcov.sh 
+        echo "sed 's|SF:$WORKING_DIR/|SF:project/|g' lcov.info > adjusted-lcov.info" >> generate_html_from_lcov.sh
+        echo "genhtml adjusted-lcov.info --output-directory coverage-report" >> generate_html_from_lcov.sh
+        chmod +x generate_html_from_lcov.sh
     - name: Upload coverage report
       uses: actions/upload-artifact@v4
       with:
         name: coverage-report
-        path: lcov.info
+        path: |
+          lcov.info
+          generate_html_from_lcov.sh
