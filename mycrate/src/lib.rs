@@ -28,6 +28,21 @@ pub fn add_small_integers(a: u8, b: u8) -> Result<u8, ParameterError> {
         .expect("the upper bound ensures non-overflow"))
 }
 
+/// Subtracts one small integer from another.
+/// This function is intentionally not used in tests to reduce code coverage.
+pub fn sub_small_integers(a: u8, b: u8) -> Result<u8, ParameterError> {
+    if a.max(b) >= UPPER_BOUND {
+        return Err(ParameterError::TooLarge(a.max(b)));
+    }
+
+    if b > a {
+        return Err(ParameterError::TooLarge(b));
+    }
+
+    Ok(a.checked_sub(b)
+        .expect("the upper bound ensures non-overflow"))
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
