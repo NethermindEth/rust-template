@@ -28,6 +28,7 @@ unmaintained = "workspace"
 
 [licenses]
 allow = [
+    "0BSD",
     "MIT",
     "Apache-2.0",
     "BSD-3-Clause",
