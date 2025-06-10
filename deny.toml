@@ -24,9 +24,11 @@ db-path = "~/.cargo/advisory-db"
 db-urls = ["https://github.com/rustsec/advisory-db"]
 yanked = "deny"
 ignore = []
+unmaintained = "workspace"
 
 [licenses]
 allow = [
+    "0BSD",
     "MIT",
     "Apache-2.0",
     "BSD-3-Clause",
@@ -35,6 +37,7 @@ allow = [
     "CC-BY-2.0",
     "CC-BY-3.0",
     "CC-BY-4.0",
+    "CC0-1.0",
     "ISC",
     "OpenSSL",
     "Unicode-3.0",
@@ -49,9 +52,9 @@ ignore = false
 registries = []
 
 [bans]
+wildcards = "deny"
 allow-wildcard-paths = true
 multiple-versions = "warn"
-wildcards = "deny"
 highlight = "all"
 
 [bans.workspace-dependencies]
@@ -65,6 +68,6 @@ unknown-git = "deny"
 allow-git = []
 
 [sources.allow-org]
-github = []
+github = ["NethermindEth"]
 gitlab = []
 bitbucket = []
