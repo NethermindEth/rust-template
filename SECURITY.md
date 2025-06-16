@@ -1,6 +1,5 @@
 ## Security
 
-In Nethermind, we take the security of our software products and services seriously.
 If you believe you have found a security vulnerability in any Nethermind-owned repository that meets [CVE's definition of a security vulnerability](https://www.cve.org/ResourcesSupport/Glossary?activeTerm=glossaryVulnerability), please report it to us as described below.
 We ask you to please not publicly disclose any details of the vulnerability until we have had an opportunity to investigate and address it.
 
@@ -17,7 +16,8 @@ Please include as much information as you can provide (listed below) to help us 
 * Step-by-step instructions to reproduce the issue and any additional configuration that might be needed.
 * Severity of the issue.
 
-Alternatively, please email <!-- TODO(template) update email address if needed --> [security@nethermind.io](mailto:security@nethermind.io).
+Alternatively, please email <!-- TODO(template) update the email address if needed --> [security@nethermind.io](mailto:security@nethermind.io).
+In case of using the email, please also specify the affected repository.
 
 We will try to address your email as soon as possible.
 But if you have not received an answer after a couple of days, please follow up via email to ensure we received your original message.
