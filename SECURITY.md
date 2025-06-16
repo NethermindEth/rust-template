@@ -1,33 +1,28 @@
 ## Security
 
-Nethermind takes the security of our software products and services seriously, which includes all source code repositories managed through our GitHub organizations, which include [Nine](https://github.com/NethermindEth/nine), [LatticeFold](https://github.com/NethermindEth/latticefold), [Condor](https://github.com/NethermindEth/condor-rs) and [StarkRings](https://github.com/NethermindEth/stark-rings).
-
+In Nethermind, we take the security of our software products and services seriously.
 If you believe you have found a security vulnerability in any Nethermind-owned repository that meets [CVE's definition of a security vulnerability](https://www.cve.org/ResourcesSupport/Glossary?activeTerm=glossaryVulnerability), please report it to us as described below.
+We ask you to please not publicly disclose any details of the vulnerability until we have had an opportunity to investigate and address it.
 
 ## Reporting Security Issues
 
 **Please do not report security vulnerabilities through public GitHub issues.**
 
-Instead, please email [security@nethermind.io](mailto:security@nethermind.io). If possible, encrypt your message with our PGP key.
+Instead, please use GitHub's <!-- TODO(template) update repository url --> [report vulnerability](https://github.com/NethermindEth/rust-template/security/advisories/new) tool to create a draft advisory.
+Please include as much information as you can provide (listed below) to help us better understand the nature and scope of the possible issue:
 
-You should receive a response within 24 hours. If for some reason you do not, please follow up via email to ensure we received your original message.
+* Type of issue.
+* Source files affected by the issue.
+* Location of source code (tag/branch/commit or direct URL).
+* Step-by-step instructions to reproduce the issue and any additional configuration that might be needed.
+* Severity of the issue.
 
-Please include the requested information listed below (as much as you can provide) to help us better understand the nature and scope of the possible issue:
+Alternatively, please email <!-- TODO(template) update email address if needed --> [security@nethermind.io](mailto:security@nethermind.io).
 
-* Type of issue (e.g. buffer overflow, SQL injection, cross-site scripting, etc.)
-* Full paths of source file(s) related to the manifestation of the issue
-* The location of the affected source code (tag/branch/commit or direct URL)
-* Any special configuration required to reproduce the issue
-* Step-by-step instructions to reproduce the issue
-* Proof-of-concept or exploit code (if possible)
-* Impact of the issue, including how an attacker might exploit the issue
-
-This information will help us triage your report more quickly.
-
-## Preferred Languages
-
-We prefer all communications to be in English.
+We will try to address your email as soon as possible.
+But if you have not received an answer after a couple of days, please follow up via email to ensure we received your original message.
 
 ## Fixes
 
-We will release fixes for verified security vulnerabilities. We expect to publish vulnerabilities using GitHub [security advisories](https://github.com/NethermindEth/rust-template/security/advisories).
+We will release fixes for verified security vulnerabilities.
+We expect to publish vulnerabilities using GitHub <!-- TODO(template) update repo information --> [security advisories](https://github.com/NethermindEth/rust-template/security/advisories).
