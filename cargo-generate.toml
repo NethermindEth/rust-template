@@ -6,5 +6,4 @@ license = "Apache-2.0"
 cargo_generate_version = ">=0.23.0"
 
 exclude = [
-    ".github/workflows/dependency-audit.yml",
 ]
