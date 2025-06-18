@@ -100,6 +100,16 @@ Signed commits
 }
 ```
 
+## How to use
+
+To generate a new project from this template, you need to install [cargo-generate](https://github.com/cargo-generate/cargo-generate) and run:
+
+```sh
+cargo install cargo-generate
+
+cargo generate --git https://github.com/NethermindEth/rust-template
+```
+
 ## Examples
 
 See [examples](./examples/).
