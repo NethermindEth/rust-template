@@ -1,11 +1,11 @@
 # :crab: RUST PROJECT TEMPLATE - TODO(template) PUT PROJECT NAME HERE
-<!--`TODO(template) update with your repository name.`-->
-[![Docs](https://github.com/{{USERNAME}}/{{REPOSITORY}}/workflows/docs.yml/badge.svg)](https://github.com/{{USERNAME}}/{{REPOSITORY}}/actions)
-[![Lint](https://github.com/{{USERNAME}}/{{REPOSITORY}}/workflows/linter.yml/badge.svg)](https://github.com/{{USERNAME}}/{{REPOSITORY}}/actions)
-[![Build](https://github.com/{{USERNAME}}/{{REPOSITORY}}/workflows/build-and-test.yml/badge.svg)](https://github.com/{{USERNAME}}/{{REPOSITORY}}/actions)
-[![Dependencies](https://github.com/{{USERNAME}}/{{REPOSITORY}}/workflows/dependency-audit.yml/badge.svg)](https://github.com/{{USERNAME}}/{{REPOSITORY}}/actions)
-[![UB](https://github.com/{{USERNAME}}/{{REPOSITORY}}/workflows/ub-detection.yml/badge.svg)](https://github.com/{{USERNAME}}/{{REPOSITORY}}/actions)
-[![Coverage](https://github.com/{{USERNAME}}/{{REPOSITORY}}/workflows/Coverage/badge.svg)](https://github.com/{{USERNAME}}/{{REPOSITORY}}/actions/workflows/coverage.yml)
+<!--`TODO(template) update each badge with your username and repository name.`-->
+[![Docs](https://github.com/NethermindEth/rust-template/actions/workflows/docs.yml/badge.svg)](https://github.com/NethermindEth/rust-template/actions/workflows/docs.yml)
+[![Lint](https://github.com/NethermindEth/rust-template/actions/workflows/linter.yml/badge.svg)](https://github.com/NethermindEth/rust-template/actions/workflows/linter.yml)
+[![Build](https://github.com/NethermindEth/rust-template/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/NethermindEth/rust-template/actions/workflows/build-and-test.yml)
+[![Dependencies](https://github.com/NethermindEth/rust-template/actions/workflows/dependency-audit.yml/badge.svg)](https://github.com/NethermindEth/rust-template/actions/workflows/dependency-audit.yml)
+[![UB](https://github.com/NethermindEth/rust-template/actions/workflows/ub-detection.yml/badge.svg)](https://github.com/NethermindEth/rust-template/actions/workflows/ub-detection.yml)
+[![Coverage](https://github.com/NethermindEth/rust-template/actions/workflows/coverage.yml/badge.svg)](https://github.com/NethermindEth/rust-template/actions/workflows/coverage.yml)
 <!-- You can replace them with a single badge if you create a main CI file that calls the other workflows
 [![CI](https://github.com/{{USERNAME}}/{{REPOSITORY}}/workflows/CI/badge.svg)](https://github.com/{{USERNAME}}/{{REPOSITORY}}/actions)
 -->
