@@ -1,4 +1,24 @@
 # :crab: RUST PROJECT TEMPLATE - TODO(template) PUT PROJECT NAME HERE
+<!--`TODO(template) update with your repository name.`-->
+[![Docs](https://github.com/{{USERNAME}}/{{REPOSITORY}}/workflows/docs.yml/badge.svg)](https://github.com/{{USERNAME}}/{{REPOSITORY}}/actions)
+[![Lint](https://github.com/{{USERNAME}}/{{REPOSITORY}}/workflows/linter.yml/badge.svg)](https://github.com/{{USERNAME}}/{{REPOSITORY}}/actions)
+[![Build](https://github.com/{{USERNAME}}/{{REPOSITORY}}/workflows/build-and-test.yml/badge.svg)](https://github.com/{{USERNAME}}/{{REPOSITORY}}/actions)
+[![Dependencies](https://github.com/{{USERNAME}}/{{REPOSITORY}}/workflows/dependency-audit.yml/badge.svg)](https://github.com/{{USERNAME}}/{{REPOSITORY}}/actions)
+[![UB](https://github.com/{{USERNAME}}/{{REPOSITORY}}/workflows/ub-detection.yml/badge.svg)](https://github.com/{{USERNAME}}/{{REPOSITORY}}/actions)
+[![Coverage](https://github.com/{{USERNAME}}/{{REPOSITORY}}/workflows/Coverage/badge.svg)](https://github.com/{{USERNAME}}/{{REPOSITORY}}/actions/workflows/coverage.yml)
+<!-- You can replace them with a single badge if you create a main CI file that calls the other workflows
+[![CI](https://github.com/{{USERNAME}}/{{REPOSITORY}}/workflows/CI/badge.svg)](https://github.com/{{USERNAME}}/{{REPOSITORY}}/actions)
+-->
+<!--`TODO(template) update with your rust version`
+If you want to change from stable to Minimum Supported Rust Version (MSRV), replace the badge with:
+![MSRV](https://img.shields.io/badge/rustc-1.70+-ab6000.svg) TODO(template) update specific version
+-->
+![Rust](https://img.shields.io/badge/rust-stable-orange.svg)
+<!--`TODO(template) update license version if needed. Check LICENSE first`-->
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+<!--`TODO(template) update with your crate information. Remove if not needed.`-->
+[![Crates.io](https://img.shields.io/crates/v/{{CRATE_NAME}}.svg)](https://crates.io/crates/{{CRATE_NAME}})
+[![Documentation](https://docs.rs/{{CRATE_NAME}}/badge.svg)](https://docs.rs/{{CRATE_NAME}})
 
 TODO(template) describe the project
 
