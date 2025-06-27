@@ -21,6 +21,4 @@ jobs:
     
     - name: Check semver compatibility
       uses: obi1kenobi/cargo-semver-checks-action@v2
-      with:
-        # Check all packages in the workspace
-        package: --workspace
+      # No parameters needed - automatically checks all packages in workspace
