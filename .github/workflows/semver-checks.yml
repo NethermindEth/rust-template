@@ -21,4 +21,7 @@ jobs:
     
     - name: Check semver compatibility
       uses: obi1kenobi/cargo-semver-checks-action@v2
-      # No parameters needed - automatically checks all packages in workspace
+      with:
+        # Skip semver checks if this is still the template's default "mycrate" name
+        # Users should rename their crate before publishing
+        exclude: mycrate
