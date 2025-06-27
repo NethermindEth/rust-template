@@ -1,0 +1,24 @@
+name: Semver checks
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  CARGO_TERM_COLOR: always
+  CARGO_INCREMENTAL: 0
+
+jobs:
+  semver:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        # cargo-semver-checks needs the full git history to compare versions
+        fetch-depth: 0
+    
+    - name: Check semver compatibility
+      uses: obi1kenobi/cargo-semver-checks-action@v2
+
