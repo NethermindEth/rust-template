@@ -24,6 +24,3 @@ jobs:
       with:
         # Check all packages in the workspace
         package: --workspace
-        # Only run on packages that have been published before
-        # This prevents errors on new packages that haven't been published yet
-        baseline-version: auto
