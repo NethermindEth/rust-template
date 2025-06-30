@@ -31,7 +31,7 @@ jobs:
       # just remove katex-header.html at the root and RUSTDOCFLAGS here
       # TODO(template) update the crate name
       - name: Build documentation
-        run: RUSTDOCFLAGS="--html-in-header katex-header.html" cargo doc --no-deps -p mycrate
+        run: RUSTDOCFLAGS="--html-in-header katex-header.html" cargo doc --no-deps -p template_crate
 
       - name: Remove lock file
         run: rm target/doc/.lock

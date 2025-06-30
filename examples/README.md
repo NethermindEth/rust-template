@@ -9,4 +9,4 @@ To run an example
 cargo run -p examples --bin addition
 ```
 
-* `addition` - shows how to add two bounded integers with the [`mycrate`](../mycrate/) library.
+* `addition` - shows how to add two bounded integers with the [`template_crate`](../template_crate/) library.
