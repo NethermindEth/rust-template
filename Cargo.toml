@@ -1,9 +1,9 @@
 
 # TODO(template) update for the crate name
 [workspace]
-members = ["examples", "template-crate"]
+members = ["examples", "template_crate"]
 resolver = "2"
-default-members = ["template-crate"]
+default-members = ["template_crate"]
 
 [workspace.package]
 version = "0.1.0"

@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [ "main" ]
 
+# Limit permissions to minimum required
+permissions:
+  contents: read
+
 env:
   CARGO_TERM_COLOR: always
   CARGO_INCREMENTAL: 0
@@ -13,12 +17,31 @@ env:
 jobs:
   semver:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
     - uses: actions/checkout@v4
       with:
         # cargo-semver-checks needs the full git history to compare versions
         fetch-depth: 0
     
+    - name: Install Rust toolchain
+      uses: dtolnay/rust-toolchain@stable
+    
+    - name: Cache cargo registry
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.cargo/registry/index/
+          ~/.cargo/registry/cache/
+          ~/.cargo/git/db/
+        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-cargo-
+    
     - name: Check semver compatibility
-      uses: obi1kenobi/cargo-semver-checks-action@v2
-
+      # Pinned to v2.8: https://github.com/obi1kenobi/cargo-semver-checks-action/releases/tag/v2.8
+      uses: obi1kenobi/cargo-semver-checks-action@5b298c9520f7096a4683c0bd981a7ac5a7e249ae
+      with:
+        # Optional: customize behavior
+        verbose: true
