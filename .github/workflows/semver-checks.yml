@@ -1,10 +1,11 @@
 name: Semver checks
 
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+    paths: ['**/Cargo.toml']  # Only run when Cargo.toml changes
+  push:
+    tags: ['v*']  # Run on version tags
 
 # Limit permissions to minimum required
 permissions:
@@ -39,9 +40,34 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-cargo-
     
+    - name: Get latest version tag
+      id: get-baseline
+      run: |
+        # Find the latest version tag
+        latest_tag=$(git describe --tags --abbrev=0 --match='v*' 2>/dev/null || echo "")
+        if [ -z "$latest_tag" ]; then
+          echo "No version tags found - skipping semver check"
+          echo "This is normal for new projects or templates"
+          echo "skip=true" >> $GITHUB_OUTPUT
+        else
+          echo "Found baseline tag: $latest_tag"
+          echo "baseline_rev=$latest_tag" >> $GITHUB_OUTPUT
+          echo "skip=false" >> $GITHUB_OUTPUT
+        fi
+    
     - name: Check semver compatibility
+      if: steps.get-baseline.outputs.skip == 'false'
       # Pinned to v2.8: https://github.com/obi1kenobi/cargo-semver-checks-action/releases/tag/v2.8
       uses: obi1kenobi/cargo-semver-checks-action@5b298c9520f7096a4683c0bd981a7ac5a7e249ae
       with:
-        # Optional: customize behavior
+        baseline-rev: ${{ steps.get-baseline.outputs.baseline_rev }}
         verbose: true
+    
+    - name: Semver check skipped
+      if: steps.get-baseline.outputs.skip == 'true'
+      run: |
+        echo "✅ Semver check skipped - no previous version tags found"
+        echo "To enable semver checking:"
+        echo "1. Tag your first release: git tag v0.1.0"
+        echo "2. Push the tag: git push origin v0.1.0"
+        echo "3. Future changes will be checked against tagged versions"
