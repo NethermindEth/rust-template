@@ -1,6 +1,6 @@
 [package]
 # TODO(template) rename
-name = "mycrate"
+name = "template_crate"
 version.workspace = true
 edition.workspace = true
 repository.workspace = true
