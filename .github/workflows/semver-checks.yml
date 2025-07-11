@@ -26,12 +26,6 @@ jobs:
         # cargo-semver-checks needs the full git history to compare versions
         fetch-depth: 0
     
-    - name: Install Rust toolchain
-      # Pinned to v1: https://github.com/dtolnay/rust-toolchain/releases/tag/v1
-      uses: dtolnay/rust-toolchain@b3b07ba8b418998c39fb20f53e8b695cdcc8de1b
-      with:
-        toolchain: stable
-    
     - name: Cache cargo registry
       uses: actions/cache@v4
       with:
@@ -70,8 +64,7 @@ jobs:
     
     - name: Check semver compatibility
       if: steps.get-baseline.outputs.skip == 'false'
-      # Pinned to v2.8: https://github.com/obi1kenobi/cargo-semver-checks-action/releases/tag/v2.8
-      uses: obi1kenobi/cargo-semver-checks-action@5b298c9520f7096a4683c0bd981a7ac5a7e249ae
+      uses: obi1kenobi/cargo-semver-checks-action@v2
       with:
         baseline-rev: ${{ steps.get-baseline.outputs.baseline_rev }}
         verbose: true
