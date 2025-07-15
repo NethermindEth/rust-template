@@ -41,8 +41,8 @@ When contributing, besides correctness, it is also important to ensure good perf
 We recommend using [Criterion](https://crates.io/crates/criterion) for general benchmarking, as it provides a well-structured framework that allows reproducible benchmarks by just running a few commands. 
 
 For performance, the profiling cycle is a 3-step process in which you need to first measure the resources consumed by your application, then isolate the most consuming ones, and finally optimize them.
-This cycle repeats until 
-To carry out this optimization cycle, we recommend the following profiling tools, as they are powerful enough, general purpose, and written in Rust:
+This cycle repeats until the performance goals are met.
+To carry out this optimization cycle, we recommend the following profiling tools, as they are powerful, general-purpose, and are either written or well integrated with Rust:
 * [Hyperfine](https://crates.io/crates/hyperfine): Provides a simple CLI interface that allows us to benchmark compiled binaries. 
 * [FlameGraph](https://crates.io/crates/flamegraph): Generates a detailed graphic of the different operations and their time in the application.
 * [Dhat](https://crates.io/crates/dhat): Measures memory allocations within the application.
@@ -95,6 +95,6 @@ fn main() {
 If we run the binary again with the `dhat-heap` feature enabled, we will get a JSON file with the memory allocations done during the execution.
 
 Many other profiling libraries exist, please check the [Rust Performance Book](https://nnethercote.github.io/perf-book/profiling.html) for a more detailed list.
-But these 3 should be enough for the average application to identify bottlenecks and optimize them. 
+But these 3 should be enough for the average application to identify bottlenecks and optimize them.
 
 For async-rust we also recommend: [Tracing](https://crates.io/crates/tracing), [Tokio-Console](https://crates.io/crates/tokio-console), and [Oha](https://crates.io/crates/oha).
