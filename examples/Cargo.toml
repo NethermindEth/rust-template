@@ -8,4 +8,4 @@ license.workspace = true
 
 [dependencies]
 # TODO(template) update the crate name
-mycrate = { path = "../mycrate" }
+template_crate = { path = "../template_crate" }
