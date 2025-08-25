@@ -12,8 +12,6 @@ permissions:
 jobs:
   cov-head:
     runs-on: ubuntu-latest
-    container:
-      image: rust:1.88
     outputs:
       pct: ${{ steps.cov.outputs.coverage }}
     steps:
@@ -46,13 +44,11 @@ jobs:
   compare-and-comment:
     needs: cov-head
     runs-on: ubuntu-latest
-    container:
-      image: rust:1.88
     steps:
       # 1) Try to download base artifact from the base branch
       - name: Download base branch artifact (if present)
         id: dl
-        uses: dawidd6/action-download-artifact@v6
+        uses: dawidd6/action-download-artifact@ac66b43f0e6a346234dd65d4d0c8fbb31cb316e5
         with:
           name: coverage-lcov
           branch: ${{ github.event.pull_request.base.ref }}
