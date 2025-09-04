@@ -1,12 +1,23 @@
 # Contributor's guide
 
-## Commit signing
+## Commits
+### Commit signing
 
 Enable [commit signing](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits)
 
 ```sh
 git config commit.gpgsign true
 ```
+
+### Commit messages
+
+Strive to write informative commit messages: a single line summary of the change and maybe a small exposition in the body of the message. 
+If you do write an exposition include parts of it in the PR description and in the source code as well. This gives multiple avenues to find the motivation for the change.
+
+Avoid writing commit message like "wip", "fix", etcetra, or a drawn out commit message that actually says nothing. Use fixup commit instead as these can be automatically squashed and thereby keeping the log clean.
+To make a fixup commit do:  `git commit --fixup SHA`, where SHA points to the commit hash where looking back you would have like to have made this change in the first place. 
+When you publish the branch for review do `git rebase --autosquash` beforehand and the history will be clean. This way you'll have chronological checkpoints while developing and on publishing a clean commit history that tells a logically constructive story without odd backreferences to an earlier point. 
+Fixup commits are also useful during reviews it maintains the chronological points of the discussion and on merging these will be squashed out.
 
 ## Prerequisites
 
