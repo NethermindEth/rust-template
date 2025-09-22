@@ -54,22 +54,30 @@ To carry out this optimization cycle, we recommend the following profiling tools
 * [Dhat](https://crates.io/crates/dhat): Measures memory allocations within the application.
 
 ### Hyperfine
+
 Once [installed](https://github.com/sharkdp/hyperfine?tab=readme-ov-file#installation), we can simply run:
 ```sh
 hyperfine 'TODO(template) update with your binary e.g. ./target/release/...' 
 ```
 ### Samply
+
+Samply creates [flame graphs](https://www.youtube.com/watch?v=D53T1Ejig1Q&t=813s) and detailed call stacks with a browser-based [Firefox Profiler](https://profiler.firefox.com/).
+
 Run
 ```sh
 cargo install --locked samply
 ```
-Please remember to add:
-```rust
+
+You [may need](https://github.com/mstange/samply/?tab=readme-ov-file#description) to grant some system access to `samply`.
+
+Into your `Cargo.toml` to add debug symbols in profiling mode:
+
+```toml
 [profile.profiling]
 inherits = "release"
 debug = true
 ```
-Into your `Cargo.toml` to add debug symbols in profiling mode.
+
 Otherwise, reading the output will be impossible.
 
 Then, we can run:
