@@ -46,6 +46,7 @@ pub fn sub_small_integers(a: u8, b: u8) -> Result<u8, ParameterError> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use proptest::proptest;
 
     #[test]
     fn addition_of_bounded() {
@@ -66,5 +67,15 @@ mod tests {
             Ok(254),
             add_small_integers(UPPER_BOUND - 1, UPPER_BOUND - 1)
         );
+    }
+
+    proptest! {
+        #[test]
+        fn addition_proptest(a in 0_u8..20, b in 0_u8..20) {
+            assert_eq!(
+                a.checked_add(b),
+                add_small_integers(a, b).ok()
+            );
+        }
     }
 }
