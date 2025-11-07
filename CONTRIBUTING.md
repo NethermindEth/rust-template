@@ -84,7 +84,11 @@ Then, we can run:
 ```sh
 samply record 'TODO(template) update with your binary e.g. ./target/release/...'
 ```
-This command will open a browser page that contains a graphic representation of where the time is being spent in our application. 
+This command will open a browser page that contains a graphic representation of where the time is being spent in our application.
+
+[Samply Kit](https://github.com/xrvdg/samply-kit) is a small toolkit for analysing and manipulating Samply and Firefox Profile data. It provides utilities for filtering and aggregating sample counts per function:
+- Filtering is very helpful when working with Rayon for example. Rayon clobbers up stack traces and by filtering the nested rayon calls you can have a clean stack trace again.
+- Aggregating sample counts per function helps in finding functions that look like small contributors in a regular flamegraphs, but in aggregate are actually large contributors. This is useful for finding mathematical routines such as multiplications and hashes that need to be optimised, or excessive memory operations that don't show up otherwise.
 
 ### Dhat
 We can add Dhat as a dependency:
