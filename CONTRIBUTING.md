@@ -117,5 +117,4 @@ Many other profiling libraries exist, please check the [Rust Performance Book](h
 But these 3 should be enough for the average application to identify bottlenecks and optimize them.
 
 For async-rust we also recommend: [Tracing](https://crates.io/crates/tracing), [Tokio-Console](https://crates.io/crates/tokio-console), and [Oha](https://crates.io/crates/oha).
-For Rayon-based parallel Rust code, we recommend Samply.
-It provides good profiling despite missing some multithreading details.
+For Rayon-based parallel Rust code, we recommend Samply in combination with [Samply Kit](https://github.com/xrvdg/samply-kit) to filter out Rayon from the stack traces.
