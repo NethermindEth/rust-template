@@ -1,6 +1,7 @@
 # IDEs
 .vscode
 .idea
+.nvim.lua
 
 # Rust/Cargo
 debug/
