@@ -122,7 +122,7 @@ Signed commits
 
 ## How to use
 
-To generate a new project from this template, you need to install [cargo-generate](https://github.com/cargo-generate/cargo-generate) and run:
+Either with "Use this template" green button on Github or, in case of using another git hosting service (or have to avoid referencing this repository), you can use [cargo-generate](https://github.com/cargo-generate/cargo-generate).
 
 ```sh
 cargo install cargo-generate
