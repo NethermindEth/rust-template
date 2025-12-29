@@ -7,8 +7,6 @@ cargo_generate_version = ">=0.23.0"
 
 # Exclude files from the placeholder generated for the template
 exclude = [
-    ".github/workflows/dependency-audit.yml",
-    ".github/workflows/coverage-pr.yml",
-    ".github/workflows/semver-checks.yml",
+    ".github/workflows",
     "target",
 ]
