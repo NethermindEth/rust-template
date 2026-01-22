@@ -134,6 +134,10 @@ cargo generate --git https://github.com/NethermindEth/rust-template
 
 See [examples](./examples/).
 
+## AI tools disclosure - TODO(template)
+
+The content published here may have been refined/augmented by the use of large language models (LLM), computer programs designed to comprehend and generate human language. However, any output refined/generated with the assistance of such programs has been reviewed, edited and revised by [TODO(template) company name].
+
 ## License
 
 TODO(template) - update [license](https://www.notion.so/nethermind/Open-Source-Software-Usage-and-Licensing-Policy-1c3360fc38d080fd9e61c29b35d1d5af) if needed.
