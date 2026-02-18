@@ -5,6 +5,7 @@ on:
     paths:
       - "**/Cargo.toml"
       - "**/Cargo.lock"
+      - "deny.toml"
 
 permissions:
   contents: read
@@ -25,7 +26,9 @@ jobs:
       - name: Check out
         uses: actions/checkout@v4
 
-      - name: Run audit-check action
+      - uses: dtolnay/rust-toolchain@stable
+
+      - name: Install cargo-deny
         uses: taiki-e/install-action@cargo-deny
 
       - name: Run cargo deny
