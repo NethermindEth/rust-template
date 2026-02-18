@@ -1,6 +1,20 @@
 name: Linter check
 
-on: push
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "**.md"
+      - "LICENSE*"
+      - ".github/workflows/docs.yml"
+      - "katex-header.html"
+  pull_request:
+    branches: [main]
+    paths-ignore:
+      - "**.md"
+      - "LICENSE*"
+      - ".github/workflows/docs.yml"
+      - "katex-header.html"
 
 permissions:
   contents: read
@@ -12,21 +26,38 @@ concurrency:
 env:
   CARGO_TERM_COLOR: always
   CARGO_INCREMENTAL: 0
-  # Make sure CI fails on all warnings, including Clippy lints
-  RUSTFLAGS: "-Dwarnings"
 
 jobs:
-  linter_check:
+  fmt:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
-      - uses: Swatinem/rust-cache@v2
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt
       - name: Run Fmt
         run: cargo fmt --all -- --check
 
+  clippy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      # Make sure CI fails on all warnings, including Clippy lints
+      RUSTFLAGS: "-Dwarnings"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy
+      - uses: Swatinem/rust-cache@v2
       - name: Run Clippy
         run: cargo clippy --all-targets --all-features
 
+  typos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
       - name: Check typos
         uses: crate-ci/typos@master
