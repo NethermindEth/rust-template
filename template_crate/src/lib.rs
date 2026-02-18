@@ -71,6 +71,7 @@ mod tests {
 
     proptest! {
         #[test]
+        #[cfg_attr(miri, ignore)]
         fn addition_proptest(a in 0_u8..20, b in 0_u8..20) {
             assert_eq!(
                 a.checked_add(b),
