@@ -43,14 +43,5 @@ jobs:
       - uses: Swatinem/rust-cache@v2
         with:
           cache-on-failure: true
-<<<<<<< HEAD
-      - run: |
-          rustup +nightly component add miri
-          cargo +nightly miri setup
-          PROPTEST_DISABLE_FAILURE_PERSISTENCE=true \
-            MIRIFLAGS="-Zmiri-env-forward=PROPTEST_DISABLE_FAILURE_PERSISTENCE -Zmiri-strict-provenance" \
-            cargo +nightly miri test --lib
-=======
       - name: Run Miri
         run: MIRIFLAGS="-Zmiri-strict-provenance" cargo +nightly miri test --lib
->>>>>>> 5d9ff19 (ci: use miri as component and skip docs only change re-run)
