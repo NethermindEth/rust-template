@@ -5,19 +5,27 @@ name: Docs
 on:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
 jobs:
   # TODO(template) remove docs publishing, when the crate is published to crates.io
   docs:
-    permissions:
-        contents: write
     name: Documentation
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
           persist-credentials: false
+
+      - uses: Swatinem/rust-cache@v2
 
       - name: Setup pages
         id: pages
@@ -49,6 +57,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     needs: docs
     steps:
       - name: Deploy to GitHub Pages
