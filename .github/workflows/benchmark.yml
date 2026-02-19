@@ -108,7 +108,6 @@ jobs:
           name: Rust Template Benchmark
           tool: "cargo"
           output-file-path: benchmark-output.txt
-          external-data-json-path: ./cache/benchmark-data.json
           gh-pages-branch: gh-pages
           benchmark-data-dir-path: dev/bench
           alert-threshold: "130%"
