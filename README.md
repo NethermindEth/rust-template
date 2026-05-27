@@ -1,11 +1,17 @@
 # :crab: RUST PROJECT TEMPLATE - TODO(template) PUT PROJECT NAME HERE
 <!--`TODO(template) update each badge with your username and repository name.`-->
-[![Docs](https://github.com/NethermindEth/rust-template/actions/workflows/docs.yml/badge.svg)](https://github.com/NethermindEth/rust-template/actions/workflows/docs.yml)
 [![Lint](https://github.com/NethermindEth/rust-template/actions/workflows/linter.yml/badge.svg)](https://github.com/NethermindEth/rust-template/actions/workflows/linter.yml)
 [![Build](https://github.com/NethermindEth/rust-template/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/NethermindEth/rust-template/actions/workflows/build-and-test.yml)
 [![Dependencies](https://github.com/NethermindEth/rust-template/actions/workflows/dependency-audit.yml/badge.svg)](https://github.com/NethermindEth/rust-template/actions/workflows/dependency-audit.yml)
 [![UB](https://github.com/NethermindEth/rust-template/actions/workflows/ub-detection.yml/badge.svg)](https://github.com/NethermindEth/rust-template/actions/workflows/ub-detection.yml)
-[![Coverage](https://github.com/NethermindEth/rust-template/actions/workflows/coverage.yml/badge.svg)](https://github.com/NethermindEth/rust-template/actions/workflows/coverage.yml)
+[![Docs](https://github.com/NethermindEth/rust-template/actions/workflows/docs.yml/badge.svg)](https://github.com/NethermindEth/rust-template/actions/workflows/docs.yml)
+<!-- `TODO(template)` The Docs badge above tracks the GitHub Pages docs deploy (docs.yml) --
+     the default docs path for this template. It only turns GREEN once you enable GitHub
+     Pages (Settings -> Pages -> Source: GitHub Actions); until then docs.yml fails on push
+     and the badge is red. If instead you publish the crate to crates.io, docs.rs builds
+     your docs on publish -- delete docs.yml and swap the Docs badge above for this one:
+[![Docs](https://docs.rs/your-crate-name/badge.svg)](https://docs.rs/your-crate-name)
+-->
 <!-- You can replace them with a single badge if you create a main CI file that calls the other workflows
 [![CI](https://github.com/{{USERNAME}}/{{REPOSITORY}}/workflows/CI/badge.svg)](https://github.com/{{USERNAME}}/{{REPOSITORY}}/actions)
 -->
@@ -16,9 +22,9 @@ If you want to change from stable to Minimum Supported Rust Version (MSRV), repl
 ![Rust](https://img.shields.io/badge/rust-stable-orange.svg)
 <!--`TODO(template) update license version if needed. Check LICENSE first`-->
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-<!--`TODO(template) update with your crate information. Remove if not needed.`-->
-[![Crates.io](https://img.shields.io/crates/v/{{CRATE_NAME}}.svg)](https://crates.io/crates/{{CRATE_NAME}})
-[![Documentation](https://docs.rs/{{CRATE_NAME}}/badge.svg)](https://docs.rs/{{CRATE_NAME}})
+<!--`TODO(template)` set your-crate-name below; shows "crates.io | not found" until you
+    publish to crates.io. Remove this badge if you don't publish.-->
+[![Crates.io](https://img.shields.io/crates/v/your-crate-name.svg)](https://crates.io/crates/your-crate-name)
 
 TODO(template) describe the project
 
@@ -33,7 +39,7 @@ This is a rust template from ZKE team :rocket: (a focus on cryptographic libs in
 - [ ] Settings -> Pages -> Build and deployment -> Source Github Actions
 - [ ] Update the description of the repo at the repo's page, add tag topics
 - [ ] Introduce necessary sections at the repo's page (releases, deployments etc)
-- [ ] Add a website url (if applicable) or a docs page (see [docs](./.github/workflows/docs.yml) flow for public repos)
+- [ ] Docs: this template publishes rustdoc to GitHub Pages on push to main ([`docs.yml`](./.github/workflows/docs.yml)). Enable Pages (Settings -> Pages -> Source: GitHub Actions) so the deploy succeeds and the Docs badge turns green, and set the Pages URL as the repo website (About -> Website). If you publish to crates.io instead, delete `docs.yml` and use the docs.rs badge in the README
 - [ ] Add [all contributors](https://allcontributors.org/docs/en/cli/installation)
 - [ ] Import protection rulesets (see below) in the repo settings (Settings -> Rules -> Rulesets -> Import a ruleset)
 - [ ] For binary crates with specific requirements to Rust features consider also [pinning](https://rust-lang.github.io/rustup/overrides.html#the-toolchain-file) the rust toolchain version

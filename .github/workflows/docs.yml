@@ -1,8 +1,12 @@
 name: Docs
 
-# TODO(template)
-# GH pages seems to work properly for public repos
 on:
+  # Publishes rustdoc to GitHub Pages on every push to main.
+  # TODO(template) This REQUIRES GitHub Pages enabled (Settings -> Pages -> Source:
+  # GitHub Actions); until you enable it these runs will fail. If you publish the crate
+  # to crates.io instead, delete this workflow and use the docs.rs badge in the README.
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
